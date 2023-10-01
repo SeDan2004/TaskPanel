@@ -73,8 +73,6 @@ function createTask(idTask, description) {
 function addTask() {
   let tasks = getTasks();
   
-  // if (!confirm("Вы уверены?")) return;
-  
   if (descriptionWin.value.trim().length === 0) {
     alert("Вы ничего не ввели");
     return;
@@ -352,10 +350,6 @@ function addPaginationAuto() {
   }
   
   setNumsOnBtn();
-}
-
-function checkTextarea() {
-  
 }
 
 function addEvent() {
