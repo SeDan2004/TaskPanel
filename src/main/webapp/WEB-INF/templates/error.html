@@ -1,0 +1,19 @@
+
+<html>
+	<head>
+		<title>Возникла ошибка</title>
+		<meta charset="utf-8"/>
+		
+		<link rel="stylesheet" th:href="@{/error/error.css}"/>
+	</head>
+	<body>
+	    <div class="error">
+			<h1>Возникла ошибка!</h1>
+			
+			<div>
+				<p>Описание ошибки:</p>
+				<p th:text="${error}" class="error_description"></p>
+			</div>
+		</div>
+	</body>
+</html>

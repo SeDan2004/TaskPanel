@@ -1,0 +1,331 @@
+h1, h2, h3, h4, h5, h6, p {
+	user-select: none;
+	font-family: Arial;
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+body {
+	margin: 0;
+	min-height: 707px;
+}
+
+.wrapper {
+	z-index: 2;
+	width: 100%;
+	opacity: 0;
+	height: 100vh;
+	display: none;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.update_description_box {
+	width: 32%;
+	height: 50vh;
+	margin: 25vh auto;
+	border-radius: 10px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.update_description_win {
+	width: 80%;
+	height: 50%;
+	resize: none;
+	outline: none;
+	margin-top: 10%;
+	margin-bottom: 5%;
+	font-size: 1.5rem;
+	font-family: Arial;
+	overflow-y: hidden;
+	padding: 0.5vh 1vh 0vh 1vh;
+}
+
+.update_description_btns {
+	height: 35%;
+	width: 100%;
+	padding: 0 7vh;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.update_description_accept, .update_description_close {
+	color: white;
+	cursor: pointer;
+	padding: 1vh 2vh;
+	transition: 0.3s;
+	font-size: 1.2rem;
+	border-radius: 5px;
+}
+
+.update_description_accept {
+	margin-right: 1rem;
+	background-color: rgba(0, 0, 255, 0.5);
+}
+
+.update_description_close {
+	background-color: rgba(255, 0, 0, 0.5);
+}
+
+.update_description_accept:hover {
+	background-color: blue;
+}
+
+.update_description_close:hover {
+	background-color: red;
+}
+
+.weekday_menu {
+	top: 6vh;
+	z-index: 1;
+	width: 75vh;
+	height: 34rem;
+	margin: 0 auto;
+	position: relative;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px;
+	background-color: springgreen;
+	display: flex;
+	flex-direction: column;
+}
+
+.weekday_head, .weekday_content {
+	width: 100%;
+}
+
+.weekday_head {
+	width: 90%;
+	height: 35%;
+	margin: 0 auto;
+	padding-bottom: 10px;
+	border-bottom: 1px solid gray;
+	display: flex;
+	flex-direction: column;
+}
+
+.weekday_head_txt {
+	margin: 3%;
+	font-size: 1.5rem;
+	text-align: center;
+	font-family: Arial;
+}
+
+.weekday_head_content {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.weekday_txtarea_and_btn {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.description_win {
+	width: 100%;
+	height: 75%;
+	resize: none;
+	outline: none;
+	overflow: hidden;
+	font-family: Arial;
+	border-radius: 3px;
+	padding: 0.5vh 1vh 0vh 1vh;
+	font-size: 1.5rem;
+}
+
+.description_accept_btn {
+	color: white;
+	margin-top: 4%;
+	cursor: pointer;
+	transition: 0.3s;
+	font-size: 1.5rem;
+	border-radius: 3px;
+	padding: 0.2rem 1rem;
+	background-color: rgba(0, 0, 255, 0.5);
+}
+
+.description_accept_btn:hover {
+	background-color: blue;
+}
+
+.tasks_not_found_txt {
+	margin-top: 30%;
+	font-size: 3.8vh;
+	text-align: center;
+}
+
+.task, .pagination_btns {
+	margin: 3%;
+}
+
+.task {
+	margin: 3% 3% 0% 3%;
+	padding: 2%;
+	border-radius: 10px;
+	background-color: rgba(240, 230, 140, 0.8);
+	display: flex;
+	flex-direction: column;
+}
+
+.task p {
+	font-size: 1.2rem;
+	word-break: break-all;
+}
+
+.task_btns_box {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.task_btns_box svg {
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.update_task {
+	margin-right: 0.5rem;
+	fill: rgba(0, 0, 255, 0.5);
+}
+
+.delete_task {
+	fill: rgba(255, 0, 0, 0.5);
+}
+
+.update_task:hover {
+	fill: blue;
+}
+
+.delete_task:hover {
+	fill: red;
+}
+
+.weekday_content {
+	width: 95%;
+	margin: 3% auto;
+	overflow-y: auto;
+}
+
+.pagination_btns {
+	margin-top: 1rem;
+	font-size: 1.5rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.back, .next {
+	display: none;
+	padding: 0.3rem 1rem;
+	font-size: 1rem;
+	border-radius: 5px;
+}
+
+.pagination_btn {
+	display: none;
+	font-size: 1rem;
+	border-radius: 100%;
+	padding: 0.3rem 0.6rem;
+}
+
+.back, .pagination_btn, .next {
+	color: white;
+	cursor: pointer;
+	transition: 0.3s;
+	font-family: Arial;
+	text-decoration: none;
+	background-color: rgba(0, 0, 255, 0.5);
+}
+
+.active {
+	cursor: default;
+	pointer-events: none;
+	background-color: blue;
+}
+
+.pagination_btns a:not(.next) {
+	margin-right: 0.5rem;
+}
+
+.back:hover, .pagination_btn:hover, .next:hover {
+	background-color: blue;
+}
+
+footer {
+	top: 12vh;
+	z-index: 1;
+	height: 8vh;
+	padding: 0 4vh;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-start;
+}
+
+.home {
+	padding: 0.2% 1%;
+	transition: 0.3s;
+	border-radius: 5px;
+	white-space: nowrap;
+	text-decoration: none;
+	box-sizing: border-box;
+	background-color: rgba(0, 0, 255, 0.5);
+}
+
+.home p {
+	font-size: 1.5rem;
+}
+
+.home:hover {
+	color: white;
+	background-color: blue;
+}
+
+@media (width < 900px) or (width < 400px) {
+	.weekday_txtarea_and_btn {
+		align-items: center;
+	}
+	
+	.description_win {
+		text-align: center;
+	}
+}
+
+@media (width < 900px) {
+	.update_description_box {
+		width: 60%;
+	}
+	
+	.weekday_menu {
+		width: 25rem;
+	}
+}
+
+@media (width < 780px) {
+	.update_description_box {
+		width: 80%;
+	}
+	
+	.update_description_btns {
+		padding: 0 3vh;
+		justify-content: space-between;
+	}
+	
+	.weekday_menu {
+		width: 20rem;
+	}
+}

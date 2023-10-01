@@ -1,0 +1,35 @@
+
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" width="device-width"/>
+		<title>Панель задач</title>
+		<link rel="stylesheet" th:href="@{/index/index.css}"/>
+		
+		<script
+  			src="https://code.jquery.com/jquery-3.7.1.min.js"
+  			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  			crossorigin="anonymous">
+  		</script>
+	</head>
+	<body>
+		<div class="weekday_box">
+		    <div th:each="weekDay : ${WeekDays}" class="weekday">			
+			    <div class="weekday_head">
+			        <p th:text="${weekDay.getName()}"></p>
+			        <p th:if="${weekDay.getWeekDayInd() == CurrentDay}" th:text="${'(сегодня)'}"></p>
+			    </div>
+			    
+			    <div class="weekday_content">
+					<a th:href="@{/showTasks{id}/{page}/{size}(id = ${weekDay.getWeekDayInd()}, page = 1, size = 10)}">
+						<div class="weekday_show_tasks">
+							<p>Посмотреть задачи</p>
+						</div>
+					</a>
+				</div>
+		    </div>
+		</div>
+		
+		<script th:src="@{/index/index.js}"></script>
+	</body>
+</html>

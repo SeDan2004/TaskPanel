@@ -1,0 +1,81 @@
+
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width"/>
+		
+		<title th:text="${WeekDay.getName()}"></title>
+		<link rel="stylesheet" th:href="@{/show/show.css}"/>
+		
+		<script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous">
+        </script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="update_description_box">
+				<textarea class="update_description_win" placeholder="Введите описание задачи"></textarea>
+				
+				<div class="update_description_btns">
+					<div class="update_description_accept">
+						<p>Подтвердить</p>
+					</div>
+					
+					<div class="update_description_close">
+						<p>Закрыть</p>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+		<div class="weekday_menu">
+			<div class="weekday_head" th:if="${page == 1}">
+				<p th:text="${WeekDay.getName()}" class="weekday_head_txt"></p>
+				<div class="weekday_head_content">
+					<div class="weekday_txtarea_and_btn">
+						<textarea placeholder="Введите описание задачи" class="description_win"></textarea>
+						
+						<div class="description_accept_btn">
+							<p>Подтвердить</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="weekday_content" th:style="${page > 1 ? 'height: 100%' : 'height: 60%'}">
+				<p th:if="${WeekDay.taskList.size() == 0}" th:text="'Нет задач на этот день!'" class="tasks_not_found_txt"></p>
+				<div th:unless="${WeekDay.taskList.size == 0}" 
+				     th:each="task : ${WeekDay.getTaskPair(page, size)}" class="task" th:id="${task.getId()}">
+					     
+					<p th:text="${task.getDescription()}"></p>
+					<div class="task_btns_box">
+						<div class="task_btns">
+							<svg th:replace="~{svg_icons :: updateTask}"></svg>
+							<svg th:replace="~{svg_icons :: deleteTask}"></svg>
+						</div>
+					</div>
+				</div>
+				
+				<div class="pagination_btns">
+					<a class="back">Назад</a>
+					<a class="pagination_btn"></a>
+					<a class="pagination_btn"></a>
+					<a class="pagination_btn"></a>
+					<a class="next">Вперёд</a>
+				</div>
+			</div>
+		</div>
+		
+		<footer>
+			<a href="/TaskPanel/" class="home">
+			    <p>На главную</p>
+			</a>
+		</footer>
+		
+		<script th:src="@{/show/show.js}"></script>
+	</body>
+</html>

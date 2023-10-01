@@ -1,0 +1,28 @@
+
+.error {
+	width: 80%;
+	margin: 0 auto;
+	font-family: Arial;
+	display: flex;
+	flex-direction: column;
+}
+
+.error h1:first-of-type {
+	text-align: center;
+}
+
+.error div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.error div p:first-of-type {
+	font-size: 1.5rem;
+}
+
+.error_description {
+	position: relative;
+	top: 0.2vh;
+	margin-left: 1rem;
+}

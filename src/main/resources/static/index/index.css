@@ -1,0 +1,68 @@
+h1, h2, h3, h4, h5, h6, p {
+	user-select: none;
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+body {
+	min-width: 80%;
+}
+
+.weekday_box {
+	width: 80%;
+	margin: 2vh auto;
+	padding: 2vh 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+.weekday {
+	padding: 0 5vh;
+	border-radius: 8px;
+	background-color: springgreen;
+}
+
+.weekday:not(div:last-of-type) {
+	margin-bottom: 2rem;
+}
+
+.weekday_head {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.weekday_head {
+	padding-top: 2vh;
+	font-size: 1.8rem;
+	font-family: Arial;
+}
+
+.weekday_content {
+	margin-top: 5vh;
+	padding-bottom: 2vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.weekday_content a {
+	text-decoration: none;
+}
+
+.weekday_show_tasks {
+	color: white;
+	cursor: pointer;
+	transition: 0.3s;
+	font-size: 1.2rem;
+	font-family: Arial;
+	border-radius: 5px;
+	padding: 0.5rem 1rem;
+	background-color: rgba(0, 0, 255, 0.5);
+}
+
+.weekday_show_tasks:hover {
+	background-color: blue;
+}
+
